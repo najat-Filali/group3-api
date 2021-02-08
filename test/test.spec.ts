@@ -1,6 +1,6 @@
 
 import * as chai from "chai"
-import {User} from "../src/model/user"
+import {User} from "../src/model/User"
 const expect = chai.expect
 
 describe("My first test", () => {
