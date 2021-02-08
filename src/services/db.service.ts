@@ -1,3 +1,6 @@
-//class DBService{ }
-//export const DB = new DBService()
+class DBService{
+
+
+}
+export const DB = new DBService()
 
