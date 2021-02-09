@@ -1,11 +1,5 @@
 name: group3-0
-on:[push]
-  #push:
-    #branches:
-      #- develop
-  #pull_request:
-    #branches:
-      #- develop
+on: [ push ]
 jobs:
   test:
     name: Run tests
