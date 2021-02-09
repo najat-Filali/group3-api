@@ -1,5 +1,5 @@
 import { DB } from "../services"
-import { User } from "../model/user"
+import { User } from "../model/User"
 
 class UserRepositoryService 
 {
