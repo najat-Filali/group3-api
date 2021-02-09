@@ -24,3 +24,16 @@ jobs:
         run: bash pre-test.sh
       - run: npm install
       - run: npm test
+      - name: Send email
+        uses: devellany/send-mailer@v1.0.2
+        with:
+          host: smtp.google.com
+            # Optional port (defaults to 465)
+            port: 465
+            account: ${{secrets.ACCOUNT}}
+            password: ${{secrets.MAIL_PASSWORD}}
+            sender: melleneije
+            from: ${{secrets.MAIL_ADDRESS}}
+            to: melleneije@gmail.com
+            subject: Yes ! 
+            body: Your a star ✨

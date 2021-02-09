@@ -6,7 +6,7 @@ class DBService {
     
     constructor()
     {
-        console.log(process.env.DB_PASSWORD, process.env.DB_USER)
+        //console.log(process.env.DB_PASSWORD, process.env.DB_USER)
         this.$con = mysql.createConnection({
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
