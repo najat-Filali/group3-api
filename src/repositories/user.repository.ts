@@ -9,12 +9,12 @@ class UserRepositoryService
         
         return new Promise((resolve, reject) => {
 
-            DB.query(queryString)
+           /* DB.query(queryString)
                 .then((results: Array<any>) => {
                     resolve(results.map(row => new User(row)))
                 }).catch(e => {
                     reject(e)
-                })
+                })*/
 
         })
     }
