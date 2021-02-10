@@ -21,7 +21,7 @@ jobs:
             echo "Hello world"
             mkdir -p $CLONE_DIR
             rm -rf /home/john/node-grp3
-            git clone -b develop git@github.com:najat-Filali/group3-api.git
+            git clone -b develop git@github.com:najat-Filali/group3-api.git /home/john/node-grp3
             cd $CLONE_DIR
             ls -la
             echo "Done"
