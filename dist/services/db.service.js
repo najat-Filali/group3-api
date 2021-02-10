@@ -1,11 +1,8 @@
-import * as mysql from "mysql"
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DB = void 0;
 class DBService {
-    
-    private $con: any
-    
-    constructor()
-    {
+    constructor() {
         //console.log(process.env.DB_PASSWORD, process.env.DB_USER)
         //this.$con = mysql.createConnection({
         //    host: process.env.DB_HOST,
@@ -13,13 +10,10 @@ class DBService {
         //    password: process.env.DB_PASSWORD,
         //    database: process.env.DB_NAME,
         //})
-
         //this.$con.connect()
     }
-    
-    query(queryString: string): Promise<any>
-    {
-        return Promise.resolve([])
+    query(queryString) {
+        return Promise.resolve([]);
         //return new Promise((resolve, reject) => {
         //    this.$con.query(queryString, (error, results, fields) => {
         //        if (error) {
@@ -31,5 +25,4 @@ class DBService {
         //})
     }
 }
-
-export const DB = new DBService()
+exports.DB = new DBService();

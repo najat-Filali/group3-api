@@ -13,7 +13,6 @@ const data = {
     id:5,
     name:"tom",
     email: "tom@test.fr"
-
 }
 
 const user = new User(data)
