@@ -2,3 +2,6 @@ node_modules
 src/configs/config.local.json
 .env
 .env.dist
+.env
+.en.test
+src/configs/config.local.json 
