@@ -24,9 +24,5 @@ app.get('/users', (req: any, res: any) => {
 })
 
 app.listen(process.env.PORT, () => {
-<<<<<<< HEAD
     console.log(`App listening on port ${process.env.PORT}`)
-=======
-    console.log(`Example app listening on port ${process.env.PORT}`)
->>>>>>> fc023e01d47be55cb31cdc3f226db59bf1bd1fd3
 })
