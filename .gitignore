@@ -1,4 +1,4 @@
-node_modules
+/dist/
+/node_modules/
+
 .env
-.en.test
-src/configs/config.local.json 

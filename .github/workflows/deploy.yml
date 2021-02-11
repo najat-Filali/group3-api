@@ -26,7 +26,8 @@ jobs:
             cd $CLONE_DIR
             npm install
             npm run build
-            cp .env.beta ./dist/.env
+            cp .env.dist ./dist/.env
             cd dist
+            sed -i 's/xenv/prod/g' .env
             sed -i 's/xport/${{ secrets.EXPRESS_PORT }}/g' .env
 
