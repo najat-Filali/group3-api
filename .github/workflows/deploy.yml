@@ -1,4 +1,4 @@
-name: Deploy in Beta
+name: Deploy in beta
 on: 
   push:
     branches:
@@ -9,21 +9,16 @@ jobs:
     steps:
       - name: Executing remote ssh 2 commands using password
         uses: appleboy/ssh-action@master
-        env:
-          CLONE_DIR:/home/john/node-grp3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          envs: CLONE_DIR
           script: |
-            echo "Hello world"
-            mkdir -p $CLONE_DIR
+            echo "Hello world "
             rm -rf /home/john/node-grp3
             git clone -b develop git@github.com:najat-Filali/group3-api.git /home/john/node-grp3
-            cd $CLONE_DIR
-            ls -la
-            echo "Done"
-  
+            cd /home/john/node-grp3
+            npm install
+            npm run build
 
