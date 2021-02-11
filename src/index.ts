@@ -9,7 +9,7 @@ import { UserRepository } from "./repositories/user.repository"
 const app = express()
 
 app.get('/', (req: any, res: any) => {
-    res.send({ message: "You're connected, congrats." })
+    res.send({ message: "Ok Group 3" })
 })
 
 app.get('/users', (req: any, res: any) => {
