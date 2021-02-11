@@ -9,16 +9,24 @@ jobs:
     steps:
       - name: Executing remote ssh 2 commands using password
         uses: appleboy/ssh-action@master
+        env:
+          CLONE_DIR: "/home/john/node-grpx"
+          REPO_URL: ${{ github.repository }}
+          EXPRESS_PORT: ${{ secrets.EXPRESS_PORT }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: CLONE_DIR,REPO_URL,EXPRESS_PORT
           script: |
-            echo "Hello world "
-            rm -rf /home/john/node-grp3
-            git clone -b develop git@github.com:najat-Filali/group3-api.git /home/john/node-grp3
-            cd /home/john/node-grp3
+            echo "Hello world"
+            rm -rf $CLONE_DIR
+            git clone -b develop git@github.com:$REPO_URL.git $CLONE_DIR
+            cd $CLONE_DIR
             npm install
             npm run build
+            cp .env.beta ./dist/.env
+            cd dist
+            sed -i 's/xport/${{ secrets.EXPRESS_PORT }}/g' .env
 
