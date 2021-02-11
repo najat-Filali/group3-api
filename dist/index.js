@@ -6,7 +6,7 @@ const express = require("express");
 dotenv.config();
 const app = express();
 app.get('/', (req, res) => {
-    res.send({ message: "You're connected, congrats." });
+    res.send({ message: "Ok Group 3" });
 });
 app.get('/users', (req, res) => {
     const limit = req.query.limit;
