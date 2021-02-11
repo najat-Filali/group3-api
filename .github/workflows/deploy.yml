@@ -10,7 +10,7 @@ jobs:
       - name: Executing remote ssh 2 commands using password
         uses: appleboy/ssh-action@master
         env:
-          CLONE_DIR: "/home/john/node-grpx"
+          CLONE_DIR: "/home/john/node-grp3"
           REPO_URL: ${{ github.repository }}
           EXPRESS_PORT: ${{ secrets.EXPRESS_PORT }}
         with:

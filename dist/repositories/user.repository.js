@@ -8,7 +8,7 @@ class UserRepositoryService {
             /* DB.query(queryString)
                  .then((results: Array<any>) => {
                      resolve(results.map(row => new User(row)))
-                 }).catch(e => {
+                 }).catch(e =>  {
                      reject(e)
                  })*/
         });
