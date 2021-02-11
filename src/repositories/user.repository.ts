@@ -7,7 +7,7 @@ class UserRepositoryService
     {
         const queryString = `SELECT id, name, email FROM users LIMIT ${limit} OFFSET ${offset}`
         
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) =>  {
 
            /* DB.query(queryString)
                 .then((results: Array<any>) => {
