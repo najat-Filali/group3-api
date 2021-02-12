@@ -8,7 +8,7 @@ dotenv.config()
 import { Config, DB } from "./services"
 import { UserRepository } from "./repositories/user.repository"
 
-const app = express()
+const app = express();
 app.use(cors());
 
 
