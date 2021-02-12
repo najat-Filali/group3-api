@@ -20,18 +20,20 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           envs: CLONE_DIR,REPO_URL,EXPRESS_PORT
           script: |
-            echo "Hello world"
             rm -rf $CLONE_DIR
             git clone -b develop git@github.com:$REPO_URL.git $CLONE_DIR
             cd $CLONE_DIR
             npm install
             npm run build
-            cp .env.sample ./dist/.env
-            cd dist
+            cp .env.dist ./dist/.env
+            cd dist && npm install
             sed -i 's/xenv/prod/g' .env
             sed -i 's/xport/${{ secrets.EXPRESS_PORT }}/g' .env
-            npm install --production
+            sed -i 's/xdbhost/${{ secrets.PROD_DB_HOST }}/g' .env
+            sed -i 's/xdbuser/${{ secrets.PROD_DB_USER }}/g' .env
+            sed -i 's/xdbpwd/${{ secrets.PROD_DB_PWD }}/g' .env
+            sed -i 's/xdbname/${{ secrets.PROD_DB_DATABASE }}/g' .env
             pm2 stop app-grp3 > /dev/null 2>&1
-            pm2 start index.js --name=app-grp3
+            pm2 start index.js --name app-grp3
 
 
