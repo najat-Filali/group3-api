@@ -30,6 +30,10 @@ jobs:
             cd dist
             sed -i 's/xenv/prod/g' .env
             sed -i 's/xport/${{ secrets.EXPRESS_PORT }}/g' .env
+            sed -i 's/xdbhost/${{ secrets.PROD_DB_HOST }}/g' .env
+            sed -i 's/xdbuser/${{ secrets.PROD_DB_USER }}/g' .env
+            sed -i 's/xdbpwd/${{ secrets.PROD_DB_PWD }}/g' .env
+            sed -i 's/xdbname/${{ secrets.PROD_DB_DATABASE }}/g' .env
             npm install --production     
             pm2 stop app-grpx > /dev/null 2>&1
             pm2 start index.js --name=app-grp3
